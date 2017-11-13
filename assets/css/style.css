@@ -1,0 +1,4 @@
+body{font-family: monospace;background-color:#EEF0F5;}
+#map{z-index: 0 !important;box-shadow: 2px 2px 3px #bdbdbd;border-width: 0px 1px 1px 1px;border-style: solid;border-color:#bdbdbd;}
+.map-title{box-shadow: 2px 2px 3px #bdbdbd;background-color: #fff;border-width: 1px 1px 0px 1px;border-style: solid;border-color:#bdbdbd;padding:20px;}
+#save_position{border-radius: 0px;padding:5px 10px 5px 10px;}
