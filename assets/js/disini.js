@@ -1,6 +1,7 @@
 var myLat,myLong;
 var map, infoWindow, marker, userMarker;
 var icon = 'assets/img/mymarker.png';
+var total_location = 0;
 
 $(document).ready(function(){     
  	initMap();
@@ -21,10 +22,13 @@ $(document).ready(function(){
 	var database = firebase.database();
 
 	database.ref('positions').on('value', function(snapshot) {
+		total_location = 0;
 	    snapshot.forEach(function(childSnapshot){
+	    	total_location = total_location + 1;
+	    	$("#total_location").text(total_location);
 	    	setMarker(childSnapshot.val().latitude, childSnapshot.val().longitude);
 	  	});			    
-	});
+	});	
 
 	$(document).on('click','#save_position', function(){
 		var uid = database.ref().child('positions').push().key;
